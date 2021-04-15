@@ -1,4 +1,4 @@
-FROM python 3.7.6-slim
+FROM ubantu:20.04
 
 ENV USER ABHIJEET
 
@@ -8,11 +8,11 @@ RUN mkdir /code1
 
 WORKDIR code1
 
-RUN pip install --upgrade pip
-RUN pip install django
+RUN apt-get update -y
+RUN apt-get install -y python3.4 python3-pip
 
 COPY . /code1/
 
 EXPOSE 8000
 
-CMD ["python","magae.py","runserver","0.0.0.0.8000"]
+CMD ["python","manage.py","runserver","0.0.0.0.8000"]
