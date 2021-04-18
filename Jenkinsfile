@@ -1,14 +1,36 @@
 pipeline{
-    agent any
+    agent{ docker { image '<img-id>' } }
     stages('build'){
         steps {
-            echo "hi starting to build app"
+            echo "building the process"
         }
     }
 
     stages('post-build'){
-        steps{
-            ...
+        steps {
+            echo " post building the process"
         }
     }
 }
+
+
+
+
+// pipeline{
+//     agent{ docker { image '<img-id>' } }
+//     stages('build'){
+//         steps {
+//             sudo chmod +x <filename>
+//         }
+//     }
+
+//     stages('post-build'){
+//         steps {
+            
+//         }
+//     }
+// }
+
+
+
+
