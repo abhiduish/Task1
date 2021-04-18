@@ -1,18 +1,18 @@
 pipeline{
-    agent{ docker { image '<img-id>' } }
-    stages('build'){
-        steps {
-            echo "building the process"
+    agent any
+    stages {
+        stage ("--build--"){
+            steps {
+                echo "mulit brnch project"
+            }
+        }
+
+        stage ("--post build--"){
+            steps {
+                echo "for pipeline project"
+            }
         }
     }
-
-    stages('post-build'){
-        steps {
-            echo " post building the process"
-        }
-    }
-}
-
 
 
 
