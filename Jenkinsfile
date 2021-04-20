@@ -1,16 +1,13 @@
-pipeline{
-    agent any
-    stages {
-        stage ("--build--"){
-            steps {
-                echo "mulit brnch project"
-            }
-        }
-
-        stage ("--post build--"){
-            steps {
-                echo "for pipeline project"
-            }
-        }
+pipeline {
+  agent any
+  parameters {
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+  }
+  stages {
+    stage('Example') {
+      steps {
+        git branch: "${params.BRANCH}", url: 'https://github.com/abhiduish/Task1.git'
+      }
     }
+  }
 }
