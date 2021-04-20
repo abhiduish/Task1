@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        git branch: %params.BRANCH%, url: 'https://github.com/abhiduish/Task1.git'
+        git branch: "%params.BRANCH%", url: 'https://github.com/abhiduish/Task1.git'
       }
     }
   }
