@@ -8,7 +8,7 @@ pipeline {
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git branch: 'branch3', changelog: false, poll: false, url: "${Gitripo}"
+                git branch: 'new-branch', changelog: false, poll: false, url: "https://github.com/abhiduish/Task1.git"
             }
         } 
         stage('Building our image') { 
