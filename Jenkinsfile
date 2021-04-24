@@ -31,7 +31,7 @@ pipeline {
         stage('docker-run') {
             steps {
                 script {
-                    dockerImage.run("-p 8096:8000 --rm --name abhivouch")
+                    dockerImage.run("-p 8096:8000 --rm --name abhivouch1")
                 }
             }
         }
